@@ -18,12 +18,53 @@ main {
 /* Header styles */
 header {
     display: flex; /* Use flexbox for layout */
-    justify-content: flex-start; /* Align items to the left */
+    justify-content: space-between; /* Space between logo and buttons */
     align-items: center; /* Center items vertically */
     background-color: #ca1e1e; /* Green background */
     color: white; /* White text color */
     padding: 20px; /* Padding around the header */
 }
+
+
+.header_buttons {
+    display: flex; /* Use flexbox for header buttons */
+    align-items: center; /* Center items vertically */
+    margin-left: auto; /* Push buttons to the right */
+}
+
+.header_nav
+{
+    display: flex; /* Use flexbox for navigation items */
+    align-items: center; /* Center items vertically */
+}
+.row-first{
+    display: flex; /* Use flexbox to align items in a row */
+    justify-content: space-between; /* Space between images */
+    margin-left: 150px; /* Align with other elements' margins */
+    margin-right: 150px; /* Align with other elements' margins */
+    width:px;
+}
+
+.search-icon, .sign-in-button {
+    margin-left: 15px; /* Space between buttons */
+    color: white; /* White color for icons/buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.sign-in-button {
+    padding: 10px 15px; /* Add padding for button-like appearance */
+    background-color: #fff; /* Background color */
+    color: #4CAF50; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.sign-in-button:hover {
+    background-color: #f1f1f1; /* Change background on hover */
+}
+
 
 .logo {
     max-height: 50px; /* Limit logo height */
@@ -49,34 +90,16 @@ nav ul li a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
-.header-buttons {
-    display: flex; /* Use flexbox for header buttons */
-    align-items: center; /* Center items vertically */
-}
-
-.search-icon, .sign-in-button {
-    margin-left: 15px; /* Space between buttons */
-    color: white; /* White color for icons/buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-.sign-in-button {
-    padding: 10px 15px; /* Add padding for button-like appearance */
-    background-color: #fff; /* Background color */
-    color: #4CAF50; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-.sign-in-button:hover {
-    background-color: #f1f1f1; /* Change background on hover */
+.footer-czu-img
+{
+    display: block; /* Make the image a block element */
+    margin: 0 auto;     
+    margin-top: 200px;
 }
 
 /* Footer styles */
 footer {
-    background-color: #fff; /* Dark background */
+    background-color: #ffffff; /* Dark background */
     color: white; /* White text color */
     padding: 20px; /* Padding around the footer */
     text-align: center; /* Centered text */
@@ -85,6 +108,10 @@ footer {
 
 .footer-social {
     margin-bottom: 15px; /* Space below social media links */
+}
+
+.footer-social-img{
+    width: 20px;
 }
 
 .footer-social a {
@@ -109,11 +136,13 @@ footer {
 }
 
 .about_us_header{
+    margin-top: 200px;
     text-align: center;
 }
 
 .contacts_header{
     text-align: center;
+    margin-top: 200px;
 }
 
 .image-gallery {
@@ -158,19 +187,29 @@ footer {
     margin-left: 150px;
     margin-right: 150px;
     margin-top: 100px;
+    width: calc(100% - 300px); /* Adjust width to fit the container */
+}
+.article-title{
+    font-size: 30px;
+}
+.article-author{
+    font-size: 15px;
 }
 .article-content {
     display: flex;
-    align-items: center; /* Center the image and description vertically */
+    align-items: flex-start; /* Align the image and description to the top */
     margin-top: 10px; /* Space between title/author and content */
+    
 }
 .article-image {
-    width: 150px; /* Adjust the width as needed */
+    width: 400px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     margin-right: 15px; /* Space between image and description */
 }
 .article-description {
-    max-width: 400px; /* Limit the width of the description */
+    font-size: 20px;
+    max-width: 100%; /* Allow description to take full width */
+    text-align: justify; /* Justify text for better alignment */
 }
 
 .about_us {
