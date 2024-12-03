@@ -1,5 +1,7 @@
 /* styles.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400&display=swap');
+
 /* General styles for body and html */
 html, body {
     height: 100%; /* Full height */
@@ -16,15 +18,33 @@ main {
     flex: 1; /* Allow main to grow and take available space */
 }
 
+.logo {
+    position: absolute; /* Position the logo absolutely */
+    left: 300%; /* Move it to the center of the header horizontally */
+    top: 50%; /* Move it to the center of the header vertically */
+    transform: translate(-50%, -50%); /* Adjust to center both horizontally and vertically */
+    max-height: 50px; /* Limit logo height */
+    text-align: center; /* Center text within the logo */
+}
+
+.logo-text {
+    font-family: 'Instrument Serif', serif; /* Apply the Instrument Serif font */
+    font-weight: 400; /* Regular weight */
+    font-size: 48px; /* Set font size to 48px */
+    color: #000; /* Set the text color (adjust as needed) */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide overflow if the text is too long */
+    text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+}
+
 /* Header styles */
 header {
     display: flex; /* Use flexbox for layout */
     justify-content: space-between; /* Space between logo and buttons */
     align-items: center; /* Center items vertically */
-    background-color: #ca1e1e; /* Green background */
-    color: white; /* White text color */
+    color: rgb(0, 0, 0); /* White text color */
     padding: 20px; /* Padding around the header */
-    position: fixed; /* Fix the header at the top */
+    position: absolute; /* Change from fixed to absolute */
     top: 0; /* Position it at the top of the page */
     left: 0; /* Align it to the left */
     right: 0; /* Align it to the right */
@@ -36,6 +56,23 @@ header {
     display: flex; /* Use flexbox for header buttons */
     align-items: center; /* Center items vertically */
     margin-left: auto; /* Push buttons to the right */
+}
+
+.header-nav{
+    color: black; /* Set text color to black */
+}
+
+.header-nav a {
+    color: black; /* Set link color to black */
+    text-decoration: none; /* Optional: Remove underline from links */
+}
+.part-two
+{
+    color: CF0000;
+}
+
+.header-nav a:hover {
+    color: darkgray; /* Optional: Change color on hover for better visibility */
 }
 
 .header_nav
@@ -79,11 +116,13 @@ header {
 nav ul {
     list-style-type: none; /* Remove bullet points */
     padding: 0; /* Remove padding */
+    position: relative; /* Position relative for dropdown positioning */
 }
 
 nav ul li {
     display: inline; /* Display list items in a line */
     margin: 0 15px; /* Margin between buttons */
+    position: relative; /* Position relative for dropdown positioning */
 }
 
 nav ul li a {
@@ -152,13 +191,51 @@ footer {
 }
 
 .image-gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-left: 150px;
-    margin-right: 150px;
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(3, 1fr); /* Three images per row */
+    gap: 20px; /* Space between images */
+    margin: 20px; /* Add margin around the gallery */
 }
+
+.image-container {
+    position: relative; /* Position relative for the overlay */
+}
+
+.image-container img {
+    width: 100%; /* Make images take full width of the grid cell */
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.overlay {
+    position: absolute; /* Position overlay absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    display: flex; /* Use flexbox for centering text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* Text color */
+    font-size: 18px; /* Font size */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s; /* Smooth transition for hover effect */
+}
+
+.image-container:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Two images per row on smaller screens */
+    }
+}
+
 .row {
     display: flex;
     justify-content: center;
@@ -271,3 +348,305 @@ nav {
     margin-right: auto; /* Push the header buttons to the right */
 }
 
+/* dropdown-about menu styles */
+nav ul {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+nav ul li {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+.dropdown-about {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position dropdown absolutely */
+    background-color: #808080; /* Match the header background */
+    min-width: 160px; /* Set a minimum width */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+nav ul li:hover .dropdown-about {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-about li {
+    padding: 10px; /* Add padding to dropdown items */
+}
+
+.dropdown-about li a {
+    color: white; /* White text color for dropdown links */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-about li a:hover {
+    background-color: #9b0000; /* Change background on hover */
+}
+
+/* dropdown-student menu styles */
+nav ul {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+nav ul li {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+.dropdown-student {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position dropdown absolutely */
+    background-color: #808080; /* Match the header background */
+    min-width: 160px; /* Set a minimum width */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+nav ul li:hover .dropdown-student {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-student li {
+    padding: 10px; /* Add padding to dropdown items */
+}
+
+.dropdown-student li a {
+    color: white; /* White text color for dropdown links */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-student li a:hover {
+    background-color: #9b0000; /* Change background on hover */
+}
+
+/* dropdown-research menu styles */
+nav ul {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+nav ul li {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+.dropdown-research {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position dropdown absolutely */
+    background-color: #808080; /* Match the header background */
+    min-width: 160px; /* Set a minimum width */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+nav ul li:hover .dropdown-research {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-research li {
+    padding: 10px; /* Add padding to dropdown items */
+}
+
+.dropdown-research li a {
+    color: white; /* White text color for dropdown links */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-research li a:hover {
+    background-color: #9b0000; /* Change background on hover */
+}
+
+/* Dropdown projects menu styles */
+nav ul {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+nav ul li {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+.dropdown-projects {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position dropdown absolutely */
+    background-color: #808080; /* Match the header background */
+    min-width: 160px; /* Set a minimum width */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+nav ul li:hover .dropdown-projects {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-projects li {
+    padding: 10px; /* Add padding to dropdown items */
+}
+
+.dropdown-projects li a {
+    color: white; /* White text color for dropdown links */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-projects li a:hover {
+    background-color: #9b0000; /* Change background on hover */
+}
+
+/* Dropdown events menu  styles */
+nav ul {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+nav ul li {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+.dropdown-events {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position dropdown absolutely */
+    background-color: #808080; /* Match the header background */
+    min-width: 160px; /* Set a minimum width */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+nav ul li:hover .dropdown-events {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-events li {
+    padding: 10px; /* Add padding to dropdown items */
+}
+
+.dropdown-events li a {
+    color: white; /* White text color for dropdown links */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-events li a:hover {
+    background-color: #9b0000; /* Change background on hover */
+}
+
+/* Dropdown applicants menu styles */
+nav ul {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+nav ul li {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+.dropdown-applicants {
+    display: none; /* Hide dropdown-applicants by default */
+    position: absolute; /* Position dropdown absolutely */
+    background-color: #808080; /* Match the header background */
+    min-width: 160px; /* Set a minimum width */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+nav ul li:hover .dropdown-applicants {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-applicants li {
+    padding: 10px; /* Add padding to dropdown-applicants items */
+}
+
+.dropdown-applicants li a {
+    color: white; /* White text color for dropdown links */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-applicants li a:hover {
+    background-color: #9b0000; /* Change background on hover */
+}
+
+/* Dropdown research menu styles */
+nav ul {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+nav ul li {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+.dropdown-research {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position dropdown absolutely */
+    background-color: #808080; /* Match the header background */
+    min-width: 160px; /* Set a minimum width */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+nav ul li:hover .dropdown-research {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-research li {
+    padding: 10px; /* Add padding to dropdown items */
+}
+
+.dropdown-research li a {
+    color: white; /* White text color for dropdown links */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-research li a:hover {
+    background-color: #9b0000; /* Change background on hover */
+}
+
+/* Dropdown research menu styles */
+nav ul {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+nav ul li {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+.dropdown-contacts {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position dropdown absolutely */
+    background-color: #808080; /* Match the header background */
+    min-width: 160px; /* Set a minimum width */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+nav ul li:hover .dropdown-contacts {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-contacts li {
+    padding: 10px; /* Add padding to dropdown items */
+}
+
+.dropdown-contacts li a {
+    color: white; /* White text color for dropdown links */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-contacts li a:hover {
+    background-color: #9b0000; /* Change background on hover */
+}
+.image-container {
+    position: relative; /* Position relative for the overlay */
+}
+
+.image-container img {
+    width: 100%; /* Make images take full width of the container */
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.overlay {
+    position: absolute; /* Position overlay absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    display: flex; /* Use flexbox for centering text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* Text color */
+    font-size: 18px; /* Font size */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s; /* Smooth transition for hover effect */
+}
+
+.image-container:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
