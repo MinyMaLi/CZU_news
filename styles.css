@@ -151,6 +151,17 @@ footer {
     border-top: 2px solid #ccc; /* Gray line on top of the footer */
 }
 
+.footer-text {
+    color: #9b0000;
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.footer-text li {
+    list-style-type: none; /* Ensure no bullet points for list items */
+}
+
 .footer-social {
     margin-bottom: 15px; /* Space below social media links */
 }
@@ -189,6 +200,7 @@ footer {
     text-align: center;
     margin-top: 200px;
 }
+
 
 .image-gallery {
     display: grid; /* Use CSS Grid for layout */
@@ -360,7 +372,7 @@ nav ul li {
 .dropdown-about {
     display: none; /* Hide dropdown by default */
     position: absolute; /* Position dropdown absolutely */
-    background-color: #808080; /* Match the header background */
+    background-color: #000000; /* Match the header background */
     min-width: 160px; /* Set a minimum width */
     z-index: 1000; /* Ensure it appears above other content */
 }
@@ -382,73 +394,8 @@ nav ul li:hover .dropdown-about {
     background-color: #9b0000; /* Change background on hover */
 }
 
-/* dropdown-student menu styles */
-nav ul {
-    position: relative; /* Position relative for dropdown positioning */
-}
 
-nav ul li {
-    position: relative; /* Position relative for dropdown positioning */
-}
 
-.dropdown-student {
-    display: none; /* Hide dropdown by default */
-    position: absolute; /* Position dropdown absolutely */
-    background-color: #808080; /* Match the header background */
-    min-width: 160px; /* Set a minimum width */
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-nav ul li:hover .dropdown-student {
-    display: block; /* Show dropdown on hover */
-}
-
-.dropdown-student li {
-    padding: 10px; /* Add padding to dropdown items */
-}
-
-.dropdown-student li a {
-    color: white; /* White text color for dropdown links */
-    text-decoration: none; /* Remove underline */
-}
-
-.dropdown-student li a:hover {
-    background-color: #9b0000; /* Change background on hover */
-}
-
-/* dropdown-research menu styles */
-nav ul {
-    position: relative; /* Position relative for dropdown positioning */
-}
-
-nav ul li {
-    position: relative; /* Position relative for dropdown positioning */
-}
-
-.dropdown-research {
-    display: none; /* Hide dropdown by default */
-    position: absolute; /* Position dropdown absolutely */
-    background-color: #808080; /* Match the header background */
-    min-width: 160px; /* Set a minimum width */
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-nav ul li:hover .dropdown-research {
-    display: block; /* Show dropdown on hover */
-}
-
-.dropdown-research li {
-    padding: 10px; /* Add padding to dropdown items */
-}
-
-.dropdown-research li a {
-    color: white; /* White text color for dropdown links */
-    text-decoration: none; /* Remove underline */
-}
-
-.dropdown-research li a:hover {
-    background-color: #9b0000; /* Change background on hover */
-}
 
 /* Dropdown projects menu styles */
 nav ul {
@@ -484,169 +431,16 @@ nav ul li:hover .dropdown-projects {
     background-color: #9b0000; /* Change background on hover */
 }
 
-/* Dropdown events menu  styles */
-nav ul {
-    position: relative; /* Position relative for dropdown positioning */
+.search-bar {
+    padding: 5px; /* Padding for the input */
+    margin-left: 10px; /* Space between icon and input */
+    border: 1px solid #ccc; /* Border for the input */
+    border-radius: 4px; /* Rounded corners */
 }
 
-nav ul li {
-    position: relative; /* Position relative for dropdown positioning */
+/* Show the search bar when it is active */
+.search-bar.active {
+    display: inline-block; /* Show the input */
 }
 
-.dropdown-events {
-    display: none; /* Hide dropdown by default */
-    position: absolute; /* Position dropdown absolutely */
-    background-color: #808080; /* Match the header background */
-    min-width: 160px; /* Set a minimum width */
-    z-index: 1000; /* Ensure it appears above other content */
-}
 
-nav ul li:hover .dropdown-events {
-    display: block; /* Show dropdown on hover */
-}
-
-.dropdown-events li {
-    padding: 10px; /* Add padding to dropdown items */
-}
-
-.dropdown-events li a {
-    color: white; /* White text color for dropdown links */
-    text-decoration: none; /* Remove underline */
-}
-
-.dropdown-events li a:hover {
-    background-color: #9b0000; /* Change background on hover */
-}
-
-/* Dropdown applicants menu styles */
-nav ul {
-    position: relative; /* Position relative for dropdown positioning */
-}
-
-nav ul li {
-    position: relative; /* Position relative for dropdown positioning */
-}
-
-.dropdown-applicants {
-    display: none; /* Hide dropdown-applicants by default */
-    position: absolute; /* Position dropdown absolutely */
-    background-color: #808080; /* Match the header background */
-    min-width: 160px; /* Set a minimum width */
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-nav ul li:hover .dropdown-applicants {
-    display: block; /* Show dropdown on hover */
-}
-
-.dropdown-applicants li {
-    padding: 10px; /* Add padding to dropdown-applicants items */
-}
-
-.dropdown-applicants li a {
-    color: white; /* White text color for dropdown links */
-    text-decoration: none; /* Remove underline */
-}
-
-.dropdown-applicants li a:hover {
-    background-color: #9b0000; /* Change background on hover */
-}
-
-/* Dropdown research menu styles */
-nav ul {
-    position: relative; /* Position relative for dropdown positioning */
-}
-
-nav ul li {
-    position: relative; /* Position relative for dropdown positioning */
-}
-
-.dropdown-research {
-    display: none; /* Hide dropdown by default */
-    position: absolute; /* Position dropdown absolutely */
-    background-color: #808080; /* Match the header background */
-    min-width: 160px; /* Set a minimum width */
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-nav ul li:hover .dropdown-research {
-    display: block; /* Show dropdown on hover */
-}
-
-.dropdown-research li {
-    padding: 10px; /* Add padding to dropdown items */
-}
-
-.dropdown-research li a {
-    color: white; /* White text color for dropdown links */
-    text-decoration: none; /* Remove underline */
-}
-
-.dropdown-research li a:hover {
-    background-color: #9b0000; /* Change background on hover */
-}
-
-/* Dropdown research menu styles */
-nav ul {
-    position: relative; /* Position relative for dropdown positioning */
-}
-
-nav ul li {
-    position: relative; /* Position relative for dropdown positioning */
-}
-
-.dropdown-contacts {
-    display: none; /* Hide dropdown by default */
-    position: absolute; /* Position dropdown absolutely */
-    background-color: #808080; /* Match the header background */
-    min-width: 160px; /* Set a minimum width */
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-nav ul li:hover .dropdown-contacts {
-    display: block; /* Show dropdown on hover */
-}
-
-.dropdown-contacts li {
-    padding: 10px; /* Add padding to dropdown items */
-}
-
-.dropdown-contacts li a {
-    color: white; /* White text color for dropdown links */
-    text-decoration: none; /* Remove underline */
-}
-
-.dropdown-contacts li a:hover {
-    background-color: #9b0000; /* Change background on hover */
-}
-.image-container {
-    position: relative; /* Position relative for the overlay */
-}
-
-.image-container img {
-    width: 100%; /* Make images take full width of the container */
-    height: 200px; /* Set a fixed height for all images */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    border-radius: 8px; /* Rounded corners for images */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-}
-
-.overlay {
-    position: absolute; /* Position overlay absolutely */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    bottom: 0; /* Align to the bottom */
-    display: flex; /* Use flexbox for centering text */
-    justify-content: center; /* Center text horizontally */
-    align-items: center; /* Center text vertically */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    color: white; /* Text color */
-    font-size: 18px; /* Font size */
-    opacity: 0; /* Start hidden */
-    transition: opacity 0.3s; /* Smooth transition for hover effect */
-}
-
-.image-container:hover .overlay {
-    opacity: 1; /* Show overlay on hover */
-}

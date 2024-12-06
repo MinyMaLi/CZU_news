@@ -6,6 +6,7 @@
     <title>CZU news</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <header>
       <nav>
@@ -13,23 +14,18 @@
           <li class="header-nav">
             <a href="projects.html">Trending news</a>
             <ul class="dropdown-projects">
-              <li><a href="/projects.html">Our project</li>
-              <li><a href="/projects.html">Fun stuff</a></li>
-              <li><a href="/projects.html">Anything </a></li>
+              <li><a href="/projects.html">Global News</li>
+              <li><a href="/projects.html">Erasmus</a></li>
+              <li><a href="/projects.html">Weather</a></li>
+              <li><a href="/projects.html">Sports</a></li>
+              <li><a href="/projects.html">Buisness</a></li>
+              <li><a href="/projects.html">Innovation</a></li>
             </ul>
           </li>
           <li class="header-nav"><a href="events.html">About us</a>
-            <ul class="dropdown-events">
-              <li><a href="/projects.html">Our project</li>
-              <li><a href="/projects.html">Fun stuff</a></li>
-              <li><a href="/projects.html">Anything </a></li>
-            </ul></li>
+            </li>
           <li class="header-nav"><a href="study_applicants.html">Content</a>
-            <ul class="dropdown-applicants">
-              <li><a href="/projects.html">Our project</li>
-              <li><a href="/projects.html">Fun stuff</a></li>
-              <li><a href="/projects.html">Anything </a></li>
-            </ul></li>
+            </li>
 
             <div class="logo">
               <a class="logo-text">
@@ -39,12 +35,15 @@
             </div>
           
       </nav>
+
       <div class="header-buttons">
         <a class="sign-in-button" href="sign_in.html">Sign In</a>
-        <span class="search-icon">🔍</span>
+        <input type="text" id="search-bar" class="search-bar" placeholder="Search..." />
+        <span class="search-icon" class="search-button" onclick="performSearch()">🔍</span>
       </div>
     </header>
 
+    
     <main>
       <div class="image-gallery">
         <div class="image-container">
@@ -287,13 +286,16 @@
         >
       </div>
       <div>
-        <img src="src/footer-czu.png" class="footer-czu-img">
+        <img src="" class="footer-czu-img">
       </img>
       </div>
       
     </main>
 
     <footer>
+<div>
+   </div>
+
       <div class="footer-social">
         <a href="https://wa.me/your-number" target="_blank">
           <img src="https://th.bing.com/th?id=ODLS.3bd88de7-bfd6-4288-a136-1377389df478&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" class="footer-social-img" alt="WhatsApp">
@@ -313,6 +315,60 @@
         <a href="index.html">Home</a>
         <a href="contacts.html">Contacts</a>
       </div>
+      <ul class="footer-text">
+        <li><a class="footer-copyright">© 2024 Cable News Network. A Warner Bros. Discovery Company. All Rights Reserved.
+          CNN Sans ™ & © 2016 Cable News Network.</a>
+         </li>
+         <li>
+          <a class="footer-authors">website was made by: Lasha Tornike Kharshildze, Ahmed Fouda, Rawan Hababa, Ahmed Alee</a>
+         </li>
+      </ul>
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          function toggleSearch() {
+              const searchBar = document.getElementById('search-bar');
+              const searchButton = document.getElementById('search-button');
+              searchBar.classList.toggle('active'); // Toggle the 'active' class
+              if (searchBar.classList.contains('active')) {
+                  searchBar.style.display = 'inline-block'; // Show the search bar
+                  searchButton.style.display = 'inline-block'; // Show the search button
+                  searchBar.focus(); // Focus on the search bar when it is shown
+              } else {
+                  searchBar.style.display = 'none'; // Hide the search bar
+                  searchButton.style.display = 'none'; // Hide the search button
+              }
+          }
+
+          window.performSearch = function() {
+              const query = document.getElementById('search-bar').value;
+              if (query) {
+                  // Redirect to a search results page with the query
+                  window.location.href = `search_results.html?query=${encodeURIComponent(query)}`;
+              }
+          }
+
+          // Add event listener for the Enter key
+          const searchBar = document.getElementById('search-bar');
+          searchBar.addEventListener('keypress', function(event) {
+              if (event.key === 'Enter') {
+                  performSearch(); // Call performSearch on Enter key press
+              }
+          });
+      });
+    </script>
+
+<script>
+  // Get the query from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('query');
+
+  // Display the search query
+  document.getElementById('results').innerText = `You searched for: ${query}`;
+
+  // Here you can implement logic to fetch and display actual search results
+</script>
+
   </body>
 </html>
