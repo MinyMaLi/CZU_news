@@ -35,6 +35,7 @@ main {
     white-space: nowrap; /* Prevent text from wrapping to the next line */
     overflow: hidden; /* Hide overflow if the text is too long */
     text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+    text-decoration: none;
 }
 
 /* Header styles */
