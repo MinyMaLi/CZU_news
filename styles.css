@@ -396,43 +396,50 @@ footer {
     padding: 0 20px; /* Add padding on the left and right */
 }
 .article-container {
-    border: 1px solid #ccc; /* Optional: Add a border */
-    padding: 20px; /* Optional: Add padding */
+    border: 1px solid #ccc;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start */
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 100px;
-    width: calc(100% - 300px); /* Adjust width to fit the container */
-    animation: slideIn 0.5s ease-out; /* Apply the animation */
-    opacity: 0; /* Start invisible */
-    animation-fill-mode: forwards; /* Keep the final state of the animation */
+    align-items: flex-start;
+    margin: 100px auto; /* Center container */
+    width: 80%; /* Use percentage instead of fixed width */
+    max-width: 1200px; /* Maximum width for large screens */
+    animation: slideIn 0.5s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
+
 .article-container.visible {
     opacity: 1; /* Make it visible when the class is added */
 }
+
 .article-title{
     font-size: 30px;
 }
+
 .article-author{
     font-size: 15px;
 }
+
 .article-content {
     display: flex;
-    align-items: flex-start; /* Align the image and description to the top */
-    margin-top: 10px; /* Space between title/author and content */
-    
+    align-items: flex-start;
+    margin-top: 10px;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    gap: 20px; /* Space between image and text when wrapped */
 }
+
 .article-image {
-    width: 400px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Space between image and description */
+    width: 100%; /* Make image responsive */
+    max-width: 400px; /* Maximum width for larger screens */
+    height: auto;
 }
+
 .article-description {
+    flex: 1; /* Allow text to take remaining space */
+    min-width: 300px; /* Minimum width before wrapping */
     font-size: 20px;
-    max-width: 100%; /* Allow description to take full width */
-    text-align: justify; /* Justify text for better alignment */
+    text-align: justify;
 }
 
 .about_us {
@@ -601,6 +608,35 @@ body {
 
 .footer-authors {
     display: block; /* Ensures it's on its own line */
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 1024px) {
+    .article-container {
+        width: 90%;
+        margin: 50px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .article-container {
+        padding: 15px;
+    }
+
+    .article-title {
+        font-size: 24px;
+    }
+
+    .article-description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-container {
+        width: 95%;
+        margin: 30px auto;
+    }
 }
 
 
