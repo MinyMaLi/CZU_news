@@ -11,7 +11,6 @@ html, body {
 body {
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Stack children vertically */
-    padding-top: 80px; /* Adjust this value based on the header height */
 }
 
 main {
@@ -19,10 +18,6 @@ main {
 }
 
 .logo {
-    position: absolute; /* Position the logo absolutely */
-    left: 300%; /* Move it to the center of the header horizontally */
-    top: 50%; /* Move it to the center of the header vertically */
-    transform: translate(-50%, -50%); /* Adjust to center both horizontally and vertically */
     max-height: 50px; /* Limit logo height */
     text-align: center; /* Center text within the logo */
 }
@@ -38,25 +33,63 @@ main {
     text-decoration: none;
 }
 
-/* Header styles */
-header {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space between logo and buttons */
-    align-items: center; /* Center items vertically */
-    color: rgb(0, 0, 0); /* White text color */
-    padding: 20px; /* Padding around the header */
-    position: absolute; /* Change from fixed to absolute */
-    top: 0; /* Position it at the top of the page */
-    left: 0; /* Align it to the left */
-    right: 0; /* Align it to the right */
-    z-index: 1000; /* Ensure it stays above other content */
+
+
+
+/* Style for the top nav (burger menu) */
+nav {
+    width: 100%; /* Full width */
+    background-color: #f8f8f8; /* Background color */
+    padding: 10px 0; /* Padding for the nav */
 }
 
+/* Style for the logo */
+.logo-container {
+    margin: 10px 0; /* Space above and below the logo */
+    text-align: center; /* Center the logo */
+}
 
-.header_buttons {
-    display: flex; /* Use flexbox for header buttons */
+/* Style for header buttons */
+.header-buttons {
+    display: flex; /* Use flexbox for layout */
     align-items: center; /* Center items vertically */
-    margin-left: auto; /* Push buttons to the right */
+    justify-content: flex-end; /* Align items to the right */
+    width: 100%; /* Full width */
+}
+
+/* Style for the search bar */
+.search-bar {
+    margin-right: 100px; /* Space between search bar and icon */
+}
+
+/* Style for the main navigation bar */
+.main-nav {
+    background-color: #f8f8f8; /* Background color for the nav bar */
+    padding: 10px 0; /* Padding for the nav bar */
+    width: 100%; /* Make the nav bar full width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
+}
+
+.main-nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    text-align: center; /* Center the links */
+}
+
+.main-nav li {
+    display: inline; /* Display list items in a line */
+    margin: 0 15px; /* Margin between links */
+}
+
+.main-nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Text color */
+    font-weight: bold; /* Bold text */
+}
+
+.main-nav a:hover {
+    color: #CF0000; /* Change color on hover */
 }
 
 .header-nav{
@@ -73,6 +106,7 @@ header {
 }
 
 .header-nav a:hover {
+    text-decoration: none; /* Remove underline on hover */
     color: darkgray; /* Optional: Change color on hover for better visibility */
 }
 
@@ -86,7 +120,6 @@ header {
     justify-content: space-between; /* Space between images */
     margin-left: 150px; /* Align with other elements' margins */
     margin-right: 150px; /* Align with other elements' margins */
-    width:px;
 }
 
 .search-icon, .sign-in-button {
@@ -107,6 +140,20 @@ header {
 
 .sign-in-button:hover {
     background-color: #f1f1f1; /* Change background on hover */
+}
+
+.header-nav
+{
+    padding: 10px 15px;
+    color:#000000;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header-nav:hover{
+    background-color: #f1f1f1;
 }
 
 
@@ -284,6 +331,12 @@ footer {
     margin-right: 150px;
     margin-top: 100px;
     width: calc(100% - 300px); /* Adjust width to fit the container */
+    animation: slideIn 0.5s ease-out; /* Apply the animation */
+    opacity: 0; /* Start invisible */
+    animation-fill-mode: forwards; /* Keep the final state of the animation */
+}
+.article-container.visible {
+    opacity: 1; /* Make it visible when the class is added */
 }
 .article-title{
     font-size: 30px;
@@ -361,42 +414,6 @@ nav {
     margin-right: auto; /* Push the header buttons to the right */
 }
 
-/* dropdown-about menu styles */
-nav ul {
-    position: relative; /* Position relative for dropdown positioning */
-}
-
-nav ul li {
-    position: relative; /* Position relative for dropdown positioning */
-}
-
-.dropdown-about {
-    display: none; /* Hide dropdown by default */
-    position: absolute; /* Position dropdown absolutely */
-    background-color: #000000; /* Match the header background */
-    min-width: 160px; /* Set a minimum width */
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-nav ul li:hover .dropdown-about {
-    display: block; /* Show dropdown on hover */
-}
-
-.dropdown-about li {
-    padding: 10px; /* Add padding to dropdown items */
-}
-
-.dropdown-about li a {
-    color: white; /* White text color for dropdown links */
-    text-decoration: none; /* Remove underline */
-}
-
-.dropdown-about li a:hover {
-    background-color: #9b0000; /* Change background on hover */
-}
-
-
-
 
 /* Dropdown projects menu styles */
 nav ul {
@@ -410,27 +427,63 @@ nav ul li {
 .dropdown-projects {
     display: none; /* Hide dropdown by default */
     position: absolute; /* Position dropdown absolutely */
-    background-color: #808080; /* Match the header background */
+    background-color: #e2e1e1; /* Match the header background */
     min-width: 160px; /* Set a minimum width */
     z-index: 1000; /* Ensure it appears above other content */
+    border: hidden;
+    border-radius: 8px;
 }
 
 nav ul li:hover .dropdown-projects {
     display: block; /* Show dropdown on hover */
 }
 
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    padding: 15px;
+  }
+  
+  .topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+
 .dropdown-projects li {
     padding: 10px; /* Add padding to dropdown items */
 }
 
 .dropdown-projects li a {
-    color: white; /* White text color for dropdown links */
+    color: rgb(0, 0, 0); /* White text color for dropdown links */
     text-decoration: none; /* Remove underline */
 }
 
 .dropdown-projects li a:hover {
-    background-color: #9b0000; /* Change background on hover */
+    color: #da0303;
+    transition: color 0.1s;
 }
+
+
 
 .search-bar {
     padding: 5px; /* Padding for the input */
@@ -442,6 +495,18 @@ nav ul li:hover .dropdown-projects {
 /* Show the search bar when it is active */
 .search-bar.active {
     display: inline-block; /* Show the input */
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px); 
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* End fully visible */
+    }
 }
 
 

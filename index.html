@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CZU news</title>
+    <title>Student news</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -12,35 +12,44 @@
       <nav>
         <ul>
           <li class="header-nav">
-            <a class="nav-header" href="projects.html">Trending news</a>
-            <ul class="dropdown-projects">
-              <li><a class="dropdown-text" href="/projects.html">Global News</li>
-              <li><a class="dropdown-text" href="/projects.html">Erasmus</a></li>
-              <li><a class="dropdown-text"href="/projects.html">Weather</a></li>
-              <li><a class="dropdown-text" href="/projects.html">Sports</a></li>
-              <li><a class="dropdown-text" href="/projects.html">Buisness</a></li>
-              <li><a class="dropdown-text" href="/projects.html">Innovation</a></li>
-            </ul>
-          </li>
-          <li class="header-nav"><a href="events.html">About us</a>
-            </li>
-          <li class="header-nav"><a href="study_applicants.html">Content</a>
-            </li>
+            <a class="nav-header" href="#" id="burger-menu" onclick="toggleMenu()">&#9776;</a> <!-- Burger icon -->
+                <ul class="dropdown-projects" id="dropdown-menu">
+                    <li><a class="dropdown-text" href="/projects.html">Global News</a></li>
+                    <li><a class="dropdown-text" href="/projects.html">Erasmus</a></li>
+                    <li><a class="dropdown-text" href="/projects.html">Weather</a></li>
+                    <li><a class="dropdown-text" href="/projects.html">Sports</a></li>
+                    <li><a class="dropdown-text" href="/projects.html">Business</a></li>
+                    <li><a class="dropdown-text" href="/projects.html">Innovation</a></li>
+                </ul>
+          
 
+          </li>
+
+          <div class="logo-container">
             <div class="logo">
               <a href="/index.html" class="logo-text">
                 <span class="part-one" style="color: black;">Student</span>
                 <span class="part-two" style="color: #CF0000;">News</span>
               </a>
             </div>
-          
+          </div>
+          <div class="header-buttons">
+            <a class="sign-in-button" href="sign_in.html">Sign In</a>
+            <a class="search-icon" class="search-button" href="#" onclick="performSearch()">🔍</a>
+            <input type="text" id="search-bar" class="search-bar" placeholder="Search..." />
+            </div>
+        
       </nav>
 
-      <div class="header-buttons">
-        <a class="sign-in-button" href="sign_in.html">Sign In</a>
-        <input type="text" id="search-bar" class="search-bar" placeholder="Search..." />
-        <span class="search-icon" class="search-button" onclick="performSearch()">🔍</span>
-      </div>
+      <!-- New Navigation Bar -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="students.html">Students</a></li>
+        </ul>
+      </nav>
     </header>
 
     
@@ -99,7 +108,7 @@
             hands-on demonstrations, attendees discussed ways to tackle pressing
             environmental challenges, from climate-resistant crop strategies to
             reducing agricultural waste. The event emphasized the need for
-            collaboration in creating a more sustainable food system, inspiring
+            collaboration in creating a more sustainable food system, inspiring1
             students to engage in research and apply eco-friendly practices. The
             symposium highlighted CZU's commitment to leading the way in
             sustainable agriculture and encouraged participants to become active
@@ -345,7 +354,7 @@
               const query = document.getElementById('search-bar').value;
               if (query) {
                   // Redirect to a search results page with the query
-                  window.location.href = `search_results.html?query=${encodeURIComponent(query)}`;
+                  window.location.href = `/search_results.html?query=${encodeURIComponent(query)}`;
               }
           }
 
@@ -368,6 +377,15 @@
   document.getElementById('results').innerText = `You searched for: ${query}`;
 
   // Here you can implement logic to fetch and display actual search results
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const articleContainers = document.querySelectorAll('.article-container');
+      articleContainers.forEach(container => {
+          container.classList.add('visible'); // Add the visible class to trigger animation
+      });
+  });
 </script>
 
   </body>
