@@ -44,6 +44,7 @@ aside:hover {
     cursor: pointer;
     font-size: 20px;
     transition: transform 0.3s ease;
+    color: #CF0000; /* Match the "News" logo color */
 }
 
 aside:hover .aside-toggle {
@@ -500,12 +501,11 @@ nav ul li {
 .dropdown-projects {
     display: none; /* Hide dropdown by default */
     position: absolute; /* Position dropdown absolutely */
-    background-color: #f8f8f8; /* Match header background color */
+    background-color: #e2e1e1; /* Match the header background */
     min-width: 160px; /* Set a minimum width */
     z-index: 1000; /* Ensure it appears above other content */
-    border: 1px solid #ccc; /* Add outline */
+    border: hidden;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds depth */
 }
 
 nav ul li:hover .dropdown-projects {
