@@ -17,6 +17,79 @@ main {
     flex: 1; /* Allow main to grow and take available space */
 }
 
+aside {
+    position: fixed;
+    top: 150px;
+    left: 0;
+    width: 40px; /* Start with small width */
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 0 8px 8px 0; /* Round only right corners */
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: width 0.3s ease; /* Smooth transition for width change */
+    overflow: hidden; /* Hide content when collapsed */
+}
+
+aside:hover {
+    width: 230px; /* Width when hovered */
+}
+
+/* Add toggle button */
+.aside-toggle {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+aside:hover .aside-toggle {
+    transform: rotate(180deg);
+}
+
+/* Hide menu content when collapsed */
+.aside-content {
+    opacity: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    transition: opacity 0.2s ease;
+    width: 200px; /* Fixed width for content */
+}
+
+aside:hover .aside-content {
+    opacity: 1;
+}
+
+aside h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+aside a:hover {
+    color: #CF0000;
+}
+
+
+
 .logo {
     max-height: 50px; /* Limit logo height */
     text-align: center; /* Center text within the logo */
@@ -427,11 +500,12 @@ nav ul li {
 .dropdown-projects {
     display: none; /* Hide dropdown by default */
     position: absolute; /* Position dropdown absolutely */
-    background-color: #e2e1e1; /* Match the header background */
+    background-color: #f8f8f8; /* Match header background color */
     min-width: 160px; /* Set a minimum width */
     z-index: 1000; /* Ensure it appears above other content */
-    border: hidden;
+    border: 1px solid #ccc; /* Add outline */
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds depth */
 }
 
 nav ul li:hover .dropdown-projects {
