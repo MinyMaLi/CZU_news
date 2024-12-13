@@ -443,52 +443,135 @@ footer {
 }
 
 .about_us {
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    margin-left: 150px;
-    margin-right: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Center the container */
+    width: 80%; /* Use percentage width */
+    max-width: 1200px; /* Maximum width for large screens */
+    padding: 20px;
 }
 
 .about_us_title {
-    text-align: center; /* Center the text within the title */
-    margin: 20px 0; /* Optional: Add some vertical spacing */
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2em;
 }
 
 .about_us_bold {
     font-weight: bold;
-    align-items: baseline; /* This property is not necessary for text alignment */
-    text-align: left; /* Ensure text is aligned to the left */
-    width: 100%; /* Optional: Make it take full width */
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.2em;
 }
 
 .about_us_text {
-    text-align: left; /* Ensure text is aligned to the left */
-    width: 100%; /* Optional: Make it take full width */
+    width: 100%;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .about_us {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about_us {
+        padding: 15px;
+    }
+
+    .about_us_title {
+        font-size: 1.8em;
+    }
+
+    .about_us_bold {
+        font-size: 1.1em;
+    }
+
+    .about_us_text {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about_us {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .about_us_title {
+        font-size: 1.6em;
+    }
 }
 
 .contacts {
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Align children to the start (left) */
-    margin-left: 150px;
-    margin-right: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Center the container */
+    width: 80%; /* Use percentage width */
+    max-width: 1200px; /* Maximum width for large screens */
+    padding: 20px;
 }
 
 .contacts_title {
-    text-align: center; /* Center the title text */
-    margin: 20px 0; /* Optional: Add some vertical spacing */
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2em;
 }
 
 .contacts_bold {
     font-weight: bold;
-    text-align: left; /* Ensure text is aligned to the left */
-    width: 100%; /* Optional: Make it take full width */
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.2em;
 }
 
 .contacts_text {
-    text-align: left; /* Ensure text is aligned to the left */
-    width: 100%; /* Optional: Make it take full width */
+    width: 100%;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .contacts {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts {
+        padding: 15px;
+    }
+
+    .contacts_title {
+        font-size: 1.8em;
+    }
+
+    .contacts_bold {
+        font-size: 1.1em;
+    }
+
+    .contacts_text {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .contacts_title {
+        font-size: 1.6em;
+    }
 }
 
 nav {
@@ -508,7 +591,7 @@ nav ul li {
 .dropdown-projects {
     display: none; /* Hide dropdown by default */
     position: absolute; /* Position dropdown absolutely */
-    background-color: #e2e1e1; /* Match the header background */
+    background-color: #ffffff; /* Match the header background */
     min-width: 160px; /* Set a minimum width */
     z-index: 1000; /* Ensure it appears above other content */
     border: hidden;
@@ -561,7 +644,7 @@ body {
 
 .dropdown-projects li a:hover {
     color: #da0303;
-    transition: color 0.1s;
+    transition: color;
 }
 
 
